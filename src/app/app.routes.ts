@@ -8,6 +8,7 @@ import {ForgottenPasswordComponent} from "./forgotten-password/forgotten-passwor
 import {QuizComponent} from "./quiz/quiz.component";
 import {RankingQuizComponent} from "./ranking-quiz/ranking-quiz.component";
 import {ArticleFeedComponent} from "./article-feed/article-feed.component";
+import {MapComponent} from "./map/map.component";
 
 export const routes: Routes = [
   { path : '', component : HomeComponent },
@@ -18,5 +19,6 @@ export const routes: Routes = [
   { path : 'mot-de-passe-oublie', component : ForgottenPasswordComponent },
   { path : 'quiz', component : QuizComponent },
   { path : 'classement-au-quiz', component : RankingQuizComponent },
-  { path : 'flux-d-actualites', component : ArticleFeedComponent }
+  { path : 'flux-d-actualites', component : ArticleFeedComponent },
+  { path : 'interactive-map', component : MapComponent }
 ];
