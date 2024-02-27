@@ -10,6 +10,9 @@ import {RankingQuizComponent} from "./ranking-quiz/ranking-quiz.component";
 import {ArticleFeedComponent} from "./article-feed/article-feed.component";
 import {MapComponent} from "./map/map.component";
 import {TimelineComponent} from "./timeline/timeline.component";
+import {LegalNoticesComponent} from "./legal-notices/legal-notices.component";
+import {DocumentaryResourcesComponent} from "./documentary-resources/documentary-resources.component";
+import {CopyrightComponent} from "./copyright/copyright.component";
 
 export const routes: Routes = [
   { path : '', component : HomeComponent },
@@ -22,5 +25,8 @@ export const routes: Routes = [
   { path : 'classement-au-quiz', component : RankingQuizComponent },
   { path : 'flux-d-actualites', component : ArticleFeedComponent },
   { path : 'carte-interactive', component : MapComponent },
-  { path : 'frise-chronologique', component : TimelineComponent }
+  { path : 'frise-chronologique', component : TimelineComponent },
+  { path : 'mentions-legales', component : LegalNoticesComponent },
+  { path : 'ressources-documentaires', component : DocumentaryResourcesComponent },
+  { path : 'credits', component : CopyrightComponent }
 ];
