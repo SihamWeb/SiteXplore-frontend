@@ -1,0 +1,86 @@
+@import '../../../styles.scss';
+
+/* BASE STYLE */
+.menu-button {
+    display: none;
+    position: fixed;
+    right: 1vw;
+    top: 1vw;
+    width: 5vh;
+    height: 5vh;
+    background: $color-primary;
+    color: #FFF;
+    font-size: 3vh;
+    line-height: 5vh;
+    text-align: center;
+    border-radius: 2vw;
+}
+
+.menu {
+    background: #59372A;
+    color: #FFFFFF;
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 7.5vh;
+    width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+}
+
+.menu ul {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    height: 100%;
+    gap: 2vw;
+    margin:auto;
+}
+
+.menu ul li {
+    height: 100%;
+    line-height: 7.5vh;
+    text-transform: uppercase;
+}
+
+
+
+/* RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .menu {
+        display:none;
+        height: auto;
+    }
+
+    .menu.responsive {
+        display:flex;
+    }    
+
+    .menu ul {
+        display: none;
+    }
+
+    .menu ul.responsive {
+        display: flex;
+
+    }
+}
+
+
+/* ANIMATIONS */
+.menu-button:focus {
+    background: $color-primary-hover;
+}
+
+.menu ul li:hover {
+    color: $color-secondary;
+    cursor: pointer;
+    transition: color .2s ease;
+}
