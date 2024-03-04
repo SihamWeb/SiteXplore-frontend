@@ -33,11 +33,10 @@
 .menu img.logo {
     position:absolute;
     left: 1.5vh;
-    top: 3vh;
-    height: 8vh;
+    top: 2vh;
+    height: 12vh;
     border: 1px solid $color-primary;
     border-radius: 50%;
-    transform: rotate(-30deg);
 }
 
 .menu ul {
@@ -129,6 +128,12 @@
     background: $color-primary-hover;
 }
 
+.menu img.logo:hover {
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
 .menu ul li:hover {
     color: $color-secondary;
     cursor: pointer;
@@ -144,4 +149,12 @@
     background: $color-accent-hover;
     cursor: pointer;
     transition: background .2s ease;
+}
+
+@keyframes shake {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(15deg);}
+    50% {transform: rotate(-15deg);}
+    75% {transform: rotate(15deg);scale: 0.9;}
+    100%{scale: 1; transform: rotate(0deg)}
 }
