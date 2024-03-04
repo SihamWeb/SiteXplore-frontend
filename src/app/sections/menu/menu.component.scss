@@ -1,6 +1,11 @@
 @import '../../../styles.scss';
 
 /* BASE STYLE */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .menu-button {
     display: none;
     position: fixed;
@@ -17,8 +22,8 @@
 }
 
 .menu {
-    background: #59372A;
-    color: #FFFFFF;
+    background: $color-primary;
+    color: $color-bg;
     display: flex;
     position: fixed;
     left: 0;
@@ -28,6 +33,16 @@
     flex-direction: row;
     align-items: center;
     align-self: center;
+}
+
+.menu img.logo {
+    position:absolute;
+    left: 1.5vh;
+    top: 3vh;
+    height: 8vh;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    transform: rotate(-30deg);
 }
 
 .menu ul {
@@ -44,6 +59,46 @@
     height: 100%;
     line-height: 7.5vh;
     text-transform: uppercase;
+    font-size: 2vh;
+}
+
+.menu input.searchbar {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    height: 40%;
+    width: 20%;
+    border: none;
+    border-radius: 0.5vh 0 0 0.5vh;
+    text-indent: 0.5vh;
+    font-size: 1.75vh;
+    padding:0;
+}
+
+.menu button.searchbar-btn {
+    position: absolute;
+    top: 30%;
+    right: 8%;
+    width: 2%;
+    height: 40%;
+    text-align:center;
+    border: none;
+    color: $color-bg;
+    border-radius: 0 0.5vh 0.5vh 0;
+    background: $color-accent;
+}
+
+.menu a.menu-profile {
+    position: absolute;
+    right: 2.5%;
+    top: 1.125vh;
+    height: 5vh;
+    width: 5vh;
+    background: $color-accent;
+    border-radius: 50%;
+    line-height: 5vh;
+    font-size: 3vh;
+    text-align: center;
 }
 
 
@@ -83,4 +138,15 @@
     color: $color-secondary;
     cursor: pointer;
     transition: color .2s ease;
+}
+.menu button.searchbar-btn:hover {
+    background: $color-accent-hover;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.menu a.menu-profile:hover {
+    background: $color-accent-hover;
+    cursor: pointer;
+    transition: background .2s ease;
 }

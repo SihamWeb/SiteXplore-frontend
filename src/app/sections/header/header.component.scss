@@ -1,1 +1,35 @@
 @import '../../../styles.scss';
+
+/* BASE STYLES */
+.header {
+    position:absolute;
+    top:0;
+    left:0;
+    height: 40vh;
+    width: 100vw;
+    border-bottom: 1px solid black;
+    background: url(../../../assets/header-img.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.header button.header-button {
+    position:absolute;
+    bottom: 2vh;
+    height: 5vh;
+    width: 10vw;
+    left: 45vw;
+    text-transform: uppercase;
+    border:none;
+    color: $color-bg;
+    background: $color-accent;
+    border-radius: 1vh;
+    font-size: 1.5vh;
+}
+
+
+/* ANIMATIONS */
+.header button.header-button:hover {
+    background: $color-accent-hover;
+    transition: background .1s ease;
+    cursor: pointer;
+}

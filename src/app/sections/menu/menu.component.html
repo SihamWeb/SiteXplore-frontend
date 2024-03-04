@@ -1,9 +1,15 @@
 <div class="menu-button"><fa-icon [icon]="faBars"></fa-icon></div>
 <div class="menu">
+    <a routerLink="/"><img class="logo" alt="Logo" src="../../../assets/logo.png"></a>
     <ul>
-        <li>Actualités</li>
-        <li>Carte</li>
-        <li>Quiz</li>
-        <li>Contact</li>
+        <a routerLink="/flux-d-actualites"><li>Actualités</li></a>
+        <a routerLink="/carte-interactive"><li>Carte</li></a>
+        <a routerLink="/quiz"><li>Quiz</li></a>
+        <a routerLink="/contact"><li>Contact</li></a>
     </ul>
+
+    <input type="text" class="searchbar" placeholder="Tapez ici pour rechercher...">
+    <button class="searchbar-btn"><fa-icon [icon]="faSearch"></fa-icon></button>
+
+    <a class="menu-profile"><fa-icon [icon]="faUser"></fa-icon></a>
 </div>
