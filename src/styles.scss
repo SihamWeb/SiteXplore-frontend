@@ -41,6 +41,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	min-height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -66,4 +67,18 @@ html {
     background: $color-bg;
     color: #000000;
     font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    position:absolute;
+    top: 45vh;
+    left: 2.5vw;
+    width: 95vw;
+    min-height: 30vh;
+    border: 1px solid red;
+    background: black;
+	color:white;
+	line-height:30vh;
+	font-size: 76px;
+	text-align:center;
 }
