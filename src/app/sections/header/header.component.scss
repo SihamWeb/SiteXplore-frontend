@@ -2,7 +2,7 @@
 
 /* BASE STYLES */
 .header {
-    position:absolute;
+    position:relative;
     top:0;
     left:0;
     height: 40vh;
@@ -10,6 +10,7 @@
     border-bottom: 1px solid black;
     background: url(../../../assets/header-img.jpg) no-repeat;
     background-size: 100% 100%;
+    z-index: 999;
 }
 
 .header button.header-button {

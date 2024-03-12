@@ -1,9 +1,10 @@
 @import '../../../styles.scss';
 
 .footer {
-    position:absolute;
+    position:static;
     bottom:0;
     left:0;
+    margin-top: 10vh;
     width: 100vw;
     height: 20vh;
     background:$color-primary;

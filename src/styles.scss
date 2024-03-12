@@ -70,15 +70,36 @@ html {
 }
 
 .container {
-    position:absolute;
-    top: 45vh;
+    position:relative;
+	margin-top: auto;
+	top: 2.5vw;
     left: 2.5vw;
     width: 95vw;
-    min-height: 30vh;
-    border: 1px solid red;
-    background: black;
-	color:white;
-	line-height:30vh;
-	font-size: 76px;
-	text-align:center;
+    min-height: auto;
+}
+
+button {
+	border:none;
+	background: $color-primary;
+	text-decoration:none;
+	padding: 0.5vh;
+}
+
+.round {
+	border: 0.25vh solid;
+	border-radius: 0.5vh;
+}
+
+.font-bg {
+	color: $color-bg;
+}
+
+.outline-secondary {
+	border-color: $color-secondary;
+}
+
+.outline-secondary:hover {
+	border-color: $color-accent;
+	cursor: pointer;
+	transition: border-color .5s ease;
 }

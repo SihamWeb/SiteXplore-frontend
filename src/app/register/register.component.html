@@ -1,1 +1,27 @@
-<p>register works!</p>
+<app-header></app-header>
+
+<div class="container">
+    <div class="register-modal">
+
+        <!-- Section d'information -->
+        <div class="welcome">
+            <p class="title">Bonjour !</p>
+            <p>Vous avez déjà un compte SiteXplore?</p>
+            <button routerLink="/connexion" class="round outline-secondary color-white font-bg">Se connecter</button>
+        </div>
+
+        <!-- Section de formulaire -->
+        <div class="form">
+            <p class="title">Créer un compte</p>
+            <form class="form-container">
+                <input class="form-input" placeholder="Votre prénom">
+                <input class="form-input" placeholder="Votre nom">
+                <input class="form-input" placeholder="Votre adresse mail">
+                <input class="form-input" placeholder="Votre mot de passe">
+                <button class="round outline-secondary">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

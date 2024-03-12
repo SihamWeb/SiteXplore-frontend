@@ -1,1 +1,25 @@
-<p>log-in works!</p>
+<app-header></app-header>
+
+<div class="container">
+    <div class="login-modal">
+
+        <!-- Section d'information -->
+        <div class="welcome">
+            <p class="title">Bonjour !</p>
+            <p>Vous n'avez pas encore de compte?</p>
+            <a routerLink="/inscription"><button class="round outline-secondary color-white font-bg">S'inscrire</button></a>
+        </div>
+
+        <!-- Section de formulaire -->
+        <div class="form">
+            <p class="title">Se connecter</p>
+            <form class="form-container">
+                <input class="form-input" placeholder="Votre adresse mail">
+                <input class="form-input" placeholder="Votre mot de passe">
+                <button class="round outline-secondary">Se connecter</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,61 @@
+@import '../../styles.scss';
+
+.login-modal {
+    height: 60vh;
+    width: 80%;
+    background: #000;
+    display:flex;
+    flex-direction:row;
+    margin:auto;
+    color:white;
+}
+
+.login-modal .welcome {
+    background: $color-primary;
+    width: 35%;
+    padding: 2.5vw 0 0 2.5vw;
+}
+
+.login-modal .form {
+    background: $color-accent-secondary;
+    width: 65%;
+}
+
+
+.login-modal .welcome .title {
+    font-size: 7vh;
+    padding-bottom: 5vh;
+}
+
+.login-modal .welcome button {
+    margin-top: 2vh;
+}
+
+.login-modal .form form.form-container {
+    display: flex;
+    width: 70%;
+    margin:auto;
+    margin-top: 15vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.login-modal .form form.form-container input.form-input {
+    margin:auto;
+    margin-top: 0.5vh;
+    font-size: 1.8vh;
+    width: 100%;
+}
+
+.login-modal .form .title {
+    font-size: 4vh;
+    text-align:center;
+    margin-top: 2.5vh;
+}
+
+.login-modal .form form.form-container button {
+    background: $color-secondary;
+    margin:auto;
+    margin-top: 2.5vh;
+    font-size: 2vh;
+}
