@@ -1,1 +1,8 @@
 <p>member-space works!</p>
+
+<div *ngIf="user">
+  <p>Nom: {{ user.firstName }}</p>
+  <p>Prénom: {{ user.lastName }}</p>
+  <p>Email: {{ user.email }}</p>
+</div>
+

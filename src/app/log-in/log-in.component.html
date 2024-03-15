@@ -13,9 +13,14 @@
         <!-- Section de formulaire -->
         <div class="form">
             <p class="title">Se connecter</p>
-            <form class="form-container">
-                <input class="form-input" placeholder="Votre adresse mail">
-                <input class="form-input" placeholder="Votre mot de passe">
+
+            <div *ngIf="responseMessage">
+              {{ responseMessage }}
+            </div>
+
+            <form class="form-container" (ngSubmit)="login()" #createForm="ngForm">
+                <input class="form-input" type="email" [(ngModel)]="credentials.email" name="email" placeholder="Votre adresse mail">
+                <input class="form-input" type="password" [(ngModel)]="credentials.password" name="password" placeholder="Votre mot de passe">
                 <button class="round outline-secondary">Se connecter</button>
             </form>
         </div>

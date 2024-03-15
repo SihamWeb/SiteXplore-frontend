@@ -20,6 +20,7 @@ export const routes: Routes = [
   { path : 'mon-compte', component : MemberSpaceComponent },
   { path : 'connexion', component : LogInComponent },
   { path : 'inscription', component : RegisterComponent },
+  { path: 'confirm-registration', component: RegisterComponent },
   { path : 'mot-de-passe-oublie', component : ForgottenPasswordComponent },
   { path : 'quiz', component : QuizComponent },
   { path : 'classement-au-quiz', component : RankingQuizComponent },

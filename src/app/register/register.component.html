@@ -1,5 +1,6 @@
 <app-header></app-header>
 
+
 <div class="container">
     <div class="register-modal">
 
@@ -12,13 +13,18 @@
 
         <!-- Section de formulaire -->
         <div class="form">
-            <p class="title">Créer un compte</p>
-            <form class="form-container">
-                <input class="form-input" placeholder="Votre prénom">
-                <input class="form-input" placeholder="Votre nom">
-                <input class="form-input" placeholder="Votre adresse mail">
-                <input class="form-input" placeholder="Votre mot de passe">
-                <button class="round outline-secondary">S'inscrire</button>
+            <p class="title">Créer un compte
+
+            <div *ngIf="responseMessage">
+              {{ responseMessage }}
+            </div>
+
+            <form class="form-container" (ngSubmit)="register()" #createForm="ngForm">
+                <input class="form-input" placeholder="Votre prénom" type="text" [(ngModel)]="newData.firstName" name="firstName" required>
+                <input class="form-input" placeholder="Votre nom" type="text" [(ngModel)]="newData.lastName" name="lastName" required>
+                <input class="form-input" placeholder="Votre address mail" type="email" [(ngModel)]="newData.email" name="email" required>
+                <input class="form-input" placeholder="Votre mot de passe" type="password" [(ngModel)]="newData.password" name="password" required>
+                <button class="round outline-secondary" type="submit">S'inscrire</button>
             </form>
         </div>
     </div>
