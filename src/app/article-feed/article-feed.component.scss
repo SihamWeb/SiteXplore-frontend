@@ -1,0 +1,51 @@
+@import '../../styles.scss';
+
+#article-list {
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-bottom: 5vh;
+}
+
+#article-list.cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 2vw;
+    row-gap: 2vw;
+}
+
+#article-list.cards .article {
+    width: 30vh;
+    height: 22.5vh;
+    border: 2px solid $color-primary;
+    border-radius: 0.5vh;
+}
+
+#article-list.cards .article img.thumbnail {
+    border-radius: 0.3vh 0.3vh 0 0;
+    width: 30vh;
+}
+
+#article-list.cards .article p.title {
+    text-align:center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#article-list.cards .article p.desc {
+    display: none;
+}
+
+
+/* ANIMATIONS */
+#article-list.cards .article:hover {
+    transition: all .5s ease;
+    transform: rotate3d(1, 1, 0, 25deg);
+    border-color: $color-secondary;
+    color: $color-secondary;
+    cursor:pointer;
+}
