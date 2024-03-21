@@ -36,8 +36,12 @@ export class LogInComponent {
     private router: Router
   ) {}
 
-  login() {
+  async login() {
     console.log('Login Angular called');
+    this.responseMessage = '';
+
+    const iziToast = await import('izitoast');
+
     if (!this.credentials.email) {
       this.responseMessage = 'Aucun email renseigné';
       return;
@@ -55,6 +59,10 @@ export class LogInComponent {
           this.router.navigate(['/mon-compte']);
         } else {
           this.responseMessage = response.message.error;
+          return iziToast.default.error({
+            title: 'Erreur',
+            message: this.responseMessage
+          });
         }
       },
       (error) => {

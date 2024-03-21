@@ -1,8 +1,21 @@
 <app-header></app-header>
 <div class="container">
-    <form class="form">
+    <form class="form" (ngSubmit)="contact()" #createForm="ngForm">
         <p class="form-title">Contactez-nous !</p>
-        <input class="form-input" name="">
+        <div class="form-fieldset">
+            <input class="form-input" [(ngModel)]="contactInfo.firstName" name="firstName" placeholder="Prénom">
+            <input class="form-input" [(ngModel)]="contactInfo.lastName" name="lastName" placeholder="Nom">
+        </div>
+        <div class="form-fieldset">
+            <input class="form-input" [(ngModel)]="contactInfo.email" name="email" placeholder="Adresse mail">
+        </div>
+        <div class="form-fieldset">
+            <input class="form-input" [(ngModel)]="contactInfo.subject" name="subject" placeholder="Sujet">
+        </div>
+        <div class="form-fieldset">
+            <textarea class="form-input" [(ngModel)]="contactInfo.content" name="content" placeholder="Message"></textarea>
+        </div>
+         <button type="submit" class="form-submit">Envoyer</button>
     </form>
 </div>
 <app-footer></app-footer>

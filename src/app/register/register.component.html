@@ -13,18 +13,20 @@
 
         <!-- Section de formulaire -->
         <div class="form">
-            <p class="title">Créer un compte
-
-            <div *ngIf="responseMessage">
-              {{ responseMessage }}
-            </div>
+            <p class="form-title">Créer un compte
 
             <form class="form-container" (ngSubmit)="register()" #createForm="ngForm">
-                <input class="form-input" placeholder="Votre prénom" type="text" [(ngModel)]="newData.firstName" name="firstName" required>
-                <input class="form-input" placeholder="Votre nom" type="text" [(ngModel)]="newData.lastName" name="lastName" required>
-                <input class="form-input" placeholder="Votre addresse mail" type="email" [(ngModel)]="newData.email" name="email" required>
-                <input class="form-input" placeholder="Votre mot de passe" type="password" [(ngModel)]="newData.password" name="password" required>
-                <button class="round outline-secondary" type="submit">S'inscrire</button>
+                <div class="form-fieldset">
+                    <input class="form-input" placeholder="Votre prénom" type="text" [(ngModel)]="newData.firstName" name="firstName" required>
+                    <input class="form-input" placeholder="Votre nom" type="text" [(ngModel)]="newData.lastName" name="lastName" required>
+                </div>
+                <div class="form-fieldset">
+                    <input class="form-input" placeholder="Votre addresse mail" type="email" [(ngModel)]="newData.email" name="email" required>
+                </div>
+                <div class="form-fieldset">
+                    <input class="form-input" placeholder="Votre mot de passe" type="password" [(ngModel)]="newData.password" name="password" required>
+                </div>
+                <button class="form-submit bg-secondary" type="submit">S'inscrire</button>
             </form>
         </div>
     </div>

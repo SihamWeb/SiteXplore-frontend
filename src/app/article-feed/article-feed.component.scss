@@ -29,6 +29,7 @@
 #article-list.cards .article img.thumbnail {
     border-radius: 0.3vh 0.3vh 0 0;
     width: 30vh;
+    height: 20vh;
 }
 
 #article-list.cards .article p.title {
@@ -36,6 +37,7 @@
     text-transform: uppercase;
     font-weight: bold;
     line-height: 2.25vh;
+    font-size: 1.3vh;
 }
 
 #article-list.cards .article p.desc {

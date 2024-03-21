@@ -111,11 +111,17 @@ button {
 	transition: border-color .5s ease;
 }
 
+.bg-secondary {
+	background: $color-secondary!important;
+}
+
 .form {
+	padding-top: 2vh;
 	background: $color-primary;
 	color: $color-bg;
 	top:0;
 	box-shadow: 0 0 5px #000;
+	padding-bottom: 2vh;
 }
 
 .form-title {
@@ -126,8 +132,59 @@ button {
 	padding-bottom: 3vh;
 }
 
-.form-input {
+.form-fieldset {
+	display:flex;
 	width: 90%;
 	margin-left: 5%;
-	font-size: 3vh;
+	flex-direction: row;
+	gap: 1vh;
+	flex-wrap: wrap;
+}
+
+.form-fieldset:not(:first-child) {
+	margin-top: 1vh;
+}
+
+.form-input {
+	display:inline-block;
+	width: auto;
+	font-size: 2.3vh;
+	border-radius: .5vh;
+	border:none;
+	transition: all .2s;
+	text-indent: 1vw;
+	flex: 1;
+}
+
+
+textarea.form-input {
+	height: 15vh;
+}
+
+.form-input:hover {
+	box-shadow: 0 0 15px #fff;
+}
+
+.form-submit {
+	width: 90%;
+	margin-top: 5vh;
+	margin-left: 5%;
+	font-size: 2.2vh;
+	color: $color-bg;
+	background: $color-accent;
+	border-radius: .5vh;
+	cursor: pointer;
+	padding: 1vh 4vh 1vh 4vh; 
+	transition: all .2s;
+}
+
+.form-submit:hover {
+	box-shadow: 0 0 15px $color-bg;
+}
+
+.form-link {
+	display:block;
+	margin-top: 0.5vh;
+	width:100%;
+	text-align:center;
 }

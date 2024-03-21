@@ -49,10 +49,20 @@ ngOnInit(): void {
     }
   }
 
-  register(): void {
+  async register() {
+    this.responseMessage = '';
+
+    const iziToast = await import('izitoast');
+
     this.registerService.register(this.newData).subscribe(
       response => {
         this.responseMessage = response.message;
+
+        iziToast.default.info({
+          title: 'Information',
+          message: this.responseMessage
+        })
+
         const token = response?.token;
         if (token) {
           localStorage.setItem('token', token);
@@ -69,7 +79,8 @@ ngOnInit(): void {
       response => {
         this.message = response.message;
         localStorage.setItem('token', response.message.token);
-        this.router.navigate(['/mon-compte', this.message]);
+        console.log(`TOKEN: ${response}`);
+        //this.router.navigate(['/mon-compte', this.message]);
       },
       error => {
         this.responseMessage = 'Erreur lors de la confirmation de l\'inscription';

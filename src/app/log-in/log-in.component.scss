@@ -17,6 +17,7 @@
 }
 
 .login-modal .form {
+    padding-top: 10vh;
     background: $color-accent-secondary;
     width: 65%;
 }
@@ -29,53 +30,4 @@
 
 .login-modal .welcome button {
     margin-top: 2vh;
-}
-
-.login-modal .form form.form-container {
-    display: flex;
-    width: 70%;
-    margin:auto;
-    margin-top: 15vh;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.login-modal .form form.form-container input.form-input {
-    margin:auto;
-    margin-top: 0.5vh;
-    font-size: 2vh;
-    width: 100%;
-    padding: 1.4vh;
-    border-radius: .5vh;
-    border:none;
-}
-
-.login-modal .form form.form-container input.form-input:not(:first-child) {
-    margin-top: 1.2vh;
-}
-
-.login-modal .form form.form-container input.form-input:hover {
-    border-color: $color-secondary;
-    transition: border-color .25s ease;
-}
-
-.login-modal .form .title {
-    font-size: 5vh;
-    text-align:center;
-    margin-top: 2.5vh;
-}
-
-.login-modal .form form.form-container button {
-    background: $color-secondary;
-    margin:auto;
-    margin-top: 2.5vh;
-    font-size: 2vh;
-    padding: 1vh 4vh 1vh 4vh; 
-}
-
-.login-modal .form form.form-container button:hover {
-    border-color: $color-secondary;
-    box-shadow: 0 0 5px $color-secondary;
-    color: $color-bg;
-    transition: all .25s ease-out;
 }

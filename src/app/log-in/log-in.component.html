@@ -12,17 +12,17 @@
 
         <!-- Section de formulaire -->
         <div class="form">
-            <p class="title">Se connecter</p>
-
-            <div *ngIf="responseMessage">
-              {{ responseMessage }}
-            </div>
+            <p class="form-title">Se connecter</p>
 
             <form class="form-container" (ngSubmit)="login()" #createForm="ngForm">
-                <input class="form-input" type="email" [(ngModel)]="credentials.email" name="email" placeholder="Votre adresse mail">
-                <input class="form-input" type="password" [(ngModel)]="credentials.password" name="password" placeholder="Votre mot de passe">
-                <button class="round outline-secondary">Se connecter</button>
-                <a routerLink="/mot-de-passe-oublie">Mot de passe oublié ?</a>
+                <div class="form-fieldset">
+                    <input class="form-input" type="email" [(ngModel)]="credentials.email" name="email" placeholder="Votre adresse mail">
+                </div>
+                <div class="form-fieldset">
+                    <input class="form-input" type="password" [(ngModel)]="credentials.password" name="password" placeholder="Votre mot de passe">
+                </div>
+                <button class="form-submit bg-secondary">Se connecter</button>
+                <a class="form-link" routerLink="/mot-de-passe-oublie">Mot de passe oublié ?</a>
             </form>
         </div>
     </div>

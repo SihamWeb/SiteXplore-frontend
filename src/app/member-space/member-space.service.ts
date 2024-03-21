@@ -18,7 +18,14 @@ export class MemberSpaceService {
   }
 
   getUserConnected(): Observable<any> {
+
+    if (typeof window !== 'undefined')
+    {
+      console.log(this.isLoggedIn())
+    }
+
     if (typeof window !== 'undefined' && localStorage.getItem('token')) {
+      console.log('wooooo');
       const token = localStorage.getItem('token');
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
       return this.http.get<any>(`${APIEndpoint}user/me`, { headers });
