@@ -110,3 +110,24 @@ button {
 	cursor: pointer;
 	transition: border-color .5s ease;
 }
+
+.form {
+	background: $color-primary;
+	color: $color-bg;
+	top:0;
+	box-shadow: 0 0 5px #000;
+}
+
+.form-title {
+	display:block;
+	padding-top: 3vh;
+	font-size: 4vh;
+	text-align:center;
+	padding-bottom: 3vh;
+}
+
+.form-input {
+	width: 90%;
+	margin-left: 5%;
+	font-size: 3vh;
+}
