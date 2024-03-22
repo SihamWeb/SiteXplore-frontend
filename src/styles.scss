@@ -188,3 +188,11 @@ textarea.form-input {
 	width:100%;
 	text-align:center;
 }
+
+.paginator {
+	background: $color-primary;
+	border-radius: 1vh;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

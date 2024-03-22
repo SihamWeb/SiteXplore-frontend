@@ -45,6 +45,21 @@
 }
 
 
+
+
+/* DISPOSITION: LIGNES */
+#articles-list.lines {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    column-gap: 2vw;
+    row-gap: 2vw;
+}
+
+
+
+
+
 /* ANIMATIONS */
 #article-list.cards .article:hover {
     transform: rotate3d(1, 1, 0, 25deg);

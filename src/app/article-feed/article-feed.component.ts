@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { HeaderComponent } from '../sections/header/header.component';
 import { FooterComponent } from '../sections/footer/footer.component';
 import {Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import { ArticleFeedService } from './article-feed.service';
 import { NgIf, NgFor } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { CustomMatPaginatorIntl } from './mat-paginator-intl.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 @Component({
   selector: 'app-article-feed',
   standalone: true,
@@ -18,32 +25,54 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     NgIf,
     NgFor,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatSelectModule,
+  ],
+  providers: [
+    { provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   templateUrl: './article-feed.component.html',
   styleUrl: './article-feed.component.scss'
 })
 export class ArticleFeedComponent {
-  title = 'Flux d\'actualités';
 
-  articles: any = {};
+  articles: any = [];
+  pagedArticles: any = [];
 
-  constructor(
-    private ArticleFeedService: ArticleFeedService,
-    private router: Router
-  ) {}
+  pageSize = 10;
+  currentPage = 0;
+
+  pageSizeOptions: number[] = [5, 10, 25, 50]; // Options de taille de page
+
+  constructor(private articleFeedService: ArticleFeedService) {}
 
   ngOnInit(): void {
     this.getArticles();
-    console.log(this.articles);
   }
 
   getArticles(): void {
-    this.ArticleFeedService.getArticles()
-      .subscribe(articles => this.articles = articles);
+    this.articleFeedService.getArticles()
+      .subscribe(articles => {
+        this.articles = articles;
+        this.updatePage();
+      });
   }
 
-  openArticleLink(articleLink: string) {
-    if(window) {
+  onPageChange(event: PageEvent): void {
+    this.pageSize = event.pageSize;
+    this.currentPage = event.pageIndex;
+    this.updatePage();
+  }
+
+  updatePage(): void {
+    const startIndex = this.currentPage * this.pageSize;
+    this.pagedArticles = this.articles.slice(startIndex, startIndex + this.pageSize);
+  }
+
+  openArticleLink(articleLink: string): void {
+    if (window) {
       window.open(articleLink);
     }
   }

@@ -3,10 +3,10 @@
 
     <p class="main-title">Liste des articles</p>
 
-    <div id="article-list" class="cards">
+    <div id="article-list" class="lines">
 
 
-        <div class="article" *ngFor="let article of articles" (click)="openArticleLink(article.link)">           
+        <div class="article" *ngFor="let article of pagedArticles" (click)="openArticleLink(article.link)">                  
             <img src="{{ article.media && article.media.mediaLink ? article.media.mediaLink : '/assets/header-img.webp' }}" class="thumbnail" alt="Article"/>
             <p class="title">{{ article.title.length <= 30 ? article.title : article.title.slice(0, 30) + '...' }}</p>
             <p class="desc">
@@ -15,6 +15,9 @@
         </div>
 
     </div>
+
+    <mat-paginator [length]="articles.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)" class="paginator">
+    </mat-paginator>
 
 </div>
 <app-footer></app-footer>
