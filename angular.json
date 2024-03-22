@@ -27,12 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "src/app",
-                "output": "/"
-              }
+              "src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",
