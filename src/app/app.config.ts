@@ -7,10 +7,12 @@ import { provideHttpClient, withFetch} from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
     provideHttpClient(withFetch()), provideAnimationsAsync(),
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ]
 };
