@@ -44,6 +44,8 @@ export class ArticleFeedComponent {
   pageSize = 10;
   currentPage = 0;
 
+  maxTitleChars = 120;
+
   pageSizeOptions: number[] = [5, 10, 25, 50]; // Options de taille de page
 
   constructor(private articleFeedService: ArticleFeedService) {}

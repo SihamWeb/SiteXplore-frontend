@@ -8,10 +8,12 @@
 
         <div class="article" *ngFor="let article of pagedArticles" (click)="openArticleLink(article.link)">                  
             <img src="{{ article.media && article.media.mediaLink ? article.media.mediaLink : '/assets/header-img.webp' }}" class="thumbnail" alt="Article"/>
-            <p class="title">{{ article.title.length <= 30 ? article.title : article.title.slice(0, 30) + '...' }}</p>
-            <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet nisi euismod, ullamcorper augue ac, tincidunt nibh. Proin tristique ut eros eu laoreet. Fusce magna nulla, lacinia sit amet rhoncus id, condimentum at quam. Phasellus a cursus tellus, vitae tempus nunc. Vivamus vel metus et ex ornare finibus in.
-            </p>
+            <div class="article-container">
+                <p class="title" (click)="openArticleLink(article.link)">{{ article.title.length <= maxTitleChars ? article.title : article.title.slice(0, maxTitleChars) + '...' }}</p>
+                <p class="desc">
+                    {{ article.description !== 'null' ? article.description : 'Aucune description' }}
+                </p>
+            </div>
         </div>
 
     </div>
