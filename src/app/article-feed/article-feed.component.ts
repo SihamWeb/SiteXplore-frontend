@@ -11,6 +11,8 @@ import { CustomMatPaginatorIntl } from './mat-paginator-intl.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faTable, faTableList } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-article-feed',
@@ -28,6 +30,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatPaginatorModule,
     MatFormFieldModule,
     MatSelectModule,
+    FontAwesomeModule,
   ],
   providers: [
     { provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl },
@@ -44,11 +47,16 @@ export class ArticleFeedComponent {
   pagedArticles: any = [];
   filterData: any = {};
   responseMessage: string = '';
+  disposition = 'cards';
+  maxTitleChars = 30;
+  maxDescChars = 450;
+
+  faTable = faTable;
+  faTableList = faTableList;
 
   pageSize = 10;
   currentPage = 0;
 
-  maxTitleChars = 120;
 
   pageSizeOptions: number[] = [5, 10, 25, 50]; // Options de taille de page
 
@@ -75,6 +83,17 @@ export class ArticleFeedComponent {
         this.articles = articles;
         this.updatePage();
       });
+  }
+
+  setArticlesDisposition(disposition: string) {
+    this.disposition = disposition;
+
+    if(disposition == 'cards') {
+      this.maxTitleChars = 10;
+    }
+    else {
+      this.maxTitleChars = 60;
+    }
   }
 
   getArticles(): void {

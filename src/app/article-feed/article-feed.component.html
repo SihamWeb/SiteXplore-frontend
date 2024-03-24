@@ -3,7 +3,8 @@
 
     <p class="main-title">Liste des articles</p>
     <div class="articles-list-disposition">
-        <button>Test</button>
+        <button id="cards" (click)="setArticlesDisposition('cards')" class="{{ disposition=='cards' ? 'active' : ''}}"><fa-icon [icon]="faTable"></fa-icon></button>
+        <button id="lines" (click)="setArticlesDisposition('lines')" class="{{ disposition=='lines' ? 'active' : ''}}"><fa-icon [icon]="faTableList"></fa-icon></button>
     </div>
 
 
@@ -38,7 +39,7 @@
         </form>
     </div>
 
-    <div id="article-list" class="lines">
+    <div id="article-list" class="{{disposition}}">
 
 
         <div class="article" *ngFor="let article of pagedArticles" (click)="openArticleLink(article.link)">                  
@@ -46,7 +47,7 @@
             <div class="article-container">
                 <p class="title" (click)="openArticleLink(article.link)">{{ article.title.length <= maxTitleChars ? article.title : article.title.slice(0, maxTitleChars) + '...' }}</p>
                 <p class="desc">
-                    {{ article.description !== 'null' ? article.description : 'Aucune description' }}
+                    {{ article.description !== 'null' ? article.description.length <= maxDescChars ? article.description : article.description.slice(0, maxDescChars) + '...' : 'Aucune description' }}
                 </p>
             </div>
         </div>
