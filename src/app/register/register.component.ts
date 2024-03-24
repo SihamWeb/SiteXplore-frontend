@@ -41,7 +41,7 @@ export class RegisterComponent {
     private registerService: RegisterService,
     private router: Router
   ) {}
-ngOnInit(): void {
+  ngOnInit(): void {
 
     const activationToken = this.route.snapshot.queryParams['token'];
     if (activationToken) {

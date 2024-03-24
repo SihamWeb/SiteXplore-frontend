@@ -1,0 +1,11 @@
+@import '../../styles.scss';
+
+#map {
+    display:block;
+    height: 70vh;
+    padding-bottom: 5vh;
+    width: 70vw;
+    border-radius: 0.5vh;
+    border: 0.2vh solid $color-primary;
+    z-index: 1;
+}

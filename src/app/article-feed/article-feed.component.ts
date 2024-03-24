@@ -39,7 +39,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 export class ArticleFeedComponent {
 
   articles: any = [];
+  authors: any = [];
+  categories: any = []; 
   pagedArticles: any = [];
+  filterData: any = {};
+  responseMessage: string = '';
 
   pageSize = 10;
   currentPage = 0;
@@ -52,6 +56,25 @@ export class ArticleFeedComponent {
 
   ngOnInit(): void {
     this.getArticles();
+    this.getAuthors();
+    this.getCategories();
+  }
+
+  async filterArticles() {
+    this.responseMessage = '';
+
+    const iziToast = await import('izitoast');
+
+    this.articleFeedService.filter(this.filterData).subscribe(
+      articles => {
+        if(articles.status == 404) {
+          return iziToast.default.error({title: 'Erreur', message: articles.message});
+        }
+        iziToast.default.success({title: 'Succès', message: 'Articles filtrés!'});
+        console.log(articles);
+        this.articles = articles;
+        this.updatePage();
+      });
   }
 
   getArticles(): void {
@@ -59,6 +82,20 @@ export class ArticleFeedComponent {
       .subscribe(articles => {
         this.articles = articles;
         this.updatePage();
+      });
+  }
+
+  getAuthors(): void {
+    this.articleFeedService.getAuthors()
+      .subscribe(authors => {
+        this.authors = authors;
+      });
+  }
+
+  getCategories(): void {
+    this.articleFeedService.getCategories()
+      .subscribe(categories => {
+        this.categories = categories;
       });
   }
 

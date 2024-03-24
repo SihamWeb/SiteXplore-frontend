@@ -25,10 +25,10 @@ export class MemberSpaceService {
     }
 
     if (typeof window !== 'undefined' && localStorage.getItem('token')) {
-      console.log('wooooo');
       const token = localStorage.getItem('token');
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-      return this.http.get<any>(`${APIEndpoint}user/me`, { headers });
+      return this.http.get<any>(`${APIEndpoint}auth/status`, { headers });
+      console.log('ok');
     } else {
       return new Observable();
     }

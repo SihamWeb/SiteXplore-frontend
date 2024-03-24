@@ -148,12 +148,20 @@ button {
 .form-input {
 	display:inline-block;
 	width: auto;
+	height: 3vh;
 	font-size: 2.3vh;
 	border-radius: .5vh;
 	border:none;
 	transition: all .2s;
 	text-indent: 1vw;
 	flex: 1;
+}
+
+.form-label {
+	color: $color-bg;
+	line-height: 3vh;
+	flex: 1;
+	text-align:right;
 }
 
 
@@ -193,6 +201,31 @@ textarea.form-input {
 	background: $color-primary;
 	border-radius: 1vh;
 }
+
+
+/* CHOIX DES FILTRES */
+.filter-modal {
+    position:absolute;
+    right: 0;
+    width: 25%;
+    height: auto;
+    padding-bottom: 1vh;
+    background: $color-primary;
+    border: 0.25vh solid $color-accent;
+    border-radius: 0.5vh;
+}
+
+.filter-modal p.title {
+    text-align:center;
+    font-size: 2.4vh;
+    color: $color-bg;
+    line-height: 6vh;
+    margin-bottom: 2vh;
+    background: $color-accent;
+    border-radius: 0.5vh 0.5vh 0 0;
+}
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

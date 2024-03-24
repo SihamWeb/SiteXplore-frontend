@@ -32,10 +32,16 @@
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss",
-              "./node_modules/izitoast/dist/css/iziToast.min.css"
+              "./node_modules/izitoast/dist/css/iziToast.min.css",
+              "./node_modules/leaflet/dist/leaflet.css",
+              "./node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css",
+              "./node_modules/leaflet.markercluster/dist/MarkerCluster.css"
             ],
             "scripts": [
-              "./node_modules/izitoast/dist/js/iziToast.min.js"
+              "./node_modules/izitoast/dist/js/iziToast.min.js",
+              "./node_modules/leaflet/dist/leaflet.js",
+              "./node_modules/leaflet.markercluster/dist/leaflet.markercluster.js",
+              "./src/map.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -48,13 +54,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ],
               "outputHashing": "all"
@@ -113,5 +119,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

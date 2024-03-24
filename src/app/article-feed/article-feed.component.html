@@ -2,12 +2,47 @@
 <div class="container">
 
     <p class="main-title">Liste des articles</p>
+    <div class="articles-list-disposition">
+        <button>Test</button>
+    </div>
+
+
+    <div class="filter-modal">
+        <p class="title">Filtres</p>
+
+        
+        <form class="form-container" (ngSubmit)="filterArticles()" #createForm="ngForm">
+            <div class="form-fieldset">
+                <label for="author" class="form-label">Auteur</label>
+                <select name="author" [(ngModel)]="filterData.author" class="form-input" id="author">
+                    <option value="">Tous</option>
+                    <option *ngFor="let author of authors" value="{{author.id}}">{{author.name}}</option>
+                </select>
+            </div>
+            <div class="form-fieldset">
+                <label for="category" class="form-label">Catégorie</label>
+                <select name="category" [(ngModel)]="filterData.category" class="form-input" id="category">
+                    <option value="">Toutes</option>
+                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                </select>
+            </div>
+            <div class="form-fieldset">
+                <label for="startDate" class="form-label">Date de publication du</label>
+                <input type="date" [(ngModel)]="filterData.startDate" name="startDate" id="startDate" class="form-input">
+            </div>
+            <div class="form-fieldset">
+                <label for="endDate" class="form-label">au</label>
+                <input type="date" [(ngModel)]="filterData.endDate" name="endDate" id="endDate" class="form-input">
+            </div>
+            <button class="form-submit" type="submit">Filtrer</button>
+        </form>
+    </div>
 
     <div id="article-list" class="lines">
 
 
         <div class="article" *ngFor="let article of pagedArticles" (click)="openArticleLink(article.link)">                  
-            <img src="{{ article.media && article.media.mediaLink ? article.media.mediaLink : '/assets/header-img.webp' }}" class="thumbnail" alt="Article"/>
+            <img src="{{ article.media && article.media.mediaLink ? article.media.mediaLink : '/assets/logo.png' }}" class="thumbnail" alt="Article"/>
             <div class="article-container">
                 <p class="title" (click)="openArticleLink(article.link)">{{ article.title.length <= maxTitleChars ? article.title : article.title.slice(0, maxTitleChars) + '...' }}</p>
                 <p class="desc">

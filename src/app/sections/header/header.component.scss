@@ -9,7 +9,8 @@
     width: 100vw;
     border-bottom: 1px solid black;
     background: url(../../../assets/header-img.jpg) no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center 60%;
     z-index: 999;
 }
 

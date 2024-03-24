@@ -13,13 +13,13 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   register(newUser: any): Observable<any>{
-    return this.http.post<any>(`${APIEndpoint}register`, newUser);
+    return this.http.post<any>(`${APIEndpoint}auth/register`, newUser);
   }
 
   confirmRegistration(activationToken: string) {
-    return this.http.get<any>(`${APIEndpoint}confirm-registration`, { params: { token: activationToken } });
+    return this.http.get<any>(`${APIEndpoint}auth/confirm-registration`, { params: { token: activationToken } });
   }
   getAllUsers(): Observable<any>{
-    return this.http.get(`${APIEndpoint}user`);
+    return this.http.get(`${APIEndpoint}auth/user`);
   }
 }

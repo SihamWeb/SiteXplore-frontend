@@ -12,6 +12,6 @@ export class LogInService {
   constructor(private http: HttpClient) { }
 
   login(credentials: any) {
-    return this.http.post<any>(`${APIEndpoint}login`, credentials);
+    return this.http.post<any>(`${APIEndpoint}auth/login`, credentials);
   }
 }
