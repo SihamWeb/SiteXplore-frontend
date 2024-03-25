@@ -8,9 +8,10 @@
         <a routerLink="/quiz"><li>Quiz</li></a>
         <a routerLink="/contact"><li>Contact</li></a>
     </ul>
-
-    <input type="text" class="searchbar" placeholder="Tapez ici pour rechercher...">
-    <button class="searchbar-btn"><fa-icon [icon]="faSearch"></fa-icon></button>
+    <form (ngSubmit)="search()" #createForm="ngForm">
+        <input type="text" class="searchbar" [(ngModel)]="searchString" name="searchString" placeholder="Tapez ici pour rechercher...">
+        <button class="searchbar-btn"><fa-icon [icon]="faSearch"></fa-icon></button>
+    </form>
 
     <a class="menu-profile" routerLink="/connexion"><fa-icon [icon]="faUser"></fa-icon></a>
 </div>

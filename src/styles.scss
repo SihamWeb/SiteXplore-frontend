@@ -202,6 +202,27 @@ textarea.form-input {
 	border-radius: 1vh;
 }
 
+button {
+	background: $color-secondary;
+	color: $color-bg;
+	padding: 0.5vw;
+	border-radius: 0.5vh;
+	transition: all .2s;
+}
+
+button:hover {
+	cursor:pointer;
+	box-shadow: 0 0 1vh $color-secondary;
+}
+
+.float-right {
+	float: right;
+}
+
+.align-center {
+	display:block;
+	margin: 0 auto;
+}
 
 /* CHOIX DES FILTRES */
 .filter-modal {
@@ -225,7 +246,9 @@ textarea.form-input {
     border-radius: 0.5vh 0.5vh 0 0;
 }
 
+span {
+	font-weight: bold;
+}
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTable, faTableList } from '@fortawesome/free-solid-svg-icons';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-article-feed',
@@ -57,13 +58,30 @@ export class ArticleFeedComponent {
   pageSize = 10;
   currentPage = 0;
 
+  searchString: any = '';
+
 
   pageSizeOptions: number[] = [5, 10, 25, 50]; // Options de taille de page
 
-  constructor(private articleFeedService: ArticleFeedService) {}
+  constructor(private articleFeedService: ArticleFeedService, private route:ActivatedRoute) {
+
+    route.params.subscribe(val => {
+      if(route.snapshot.params['search'])
+      {
+        this.articles = [];
+        this.searchString = route.snapshot.params['search'];
+        this.getSearchedArticles(this.searchString);
+      }
+    });
+
+  }
+
+
 
   ngOnInit(): void {
-    this.getArticles();
+    if(!this.route.snapshot.params['search']) {
+      this.getArticles();
+    }
     this.getAuthors();
     this.getCategories();
   }
@@ -89,7 +107,7 @@ export class ArticleFeedComponent {
     this.disposition = disposition;
 
     if(disposition == 'cards') {
-      this.maxTitleChars = 10;
+      this.maxTitleChars = 30;
     }
     else {
       this.maxTitleChars = 60;
@@ -102,6 +120,19 @@ export class ArticleFeedComponent {
         this.articles = articles;
         this.updatePage();
       });
+  }
+
+  getSearchedArticles(searchString: any): void {
+    this.articles = [];
+    this.articleFeedService.getSearchedArticles(searchString)
+      .subscribe(async articles => {
+        
+        const iziToast = await import('izitoast');
+
+        this.articles = articles;
+        this.updatePage();
+      });
+    this.updatePage();
   }
 
   getAuthors(): void {
