@@ -2,7 +2,16 @@
 @import '../../styles.scss';
 
 
+.register-button {
+    margin-top: 5vh;
+    background: $color-accent;
+    font-size: 2.5vh;
+}
 
+.register-button:hover {
+    background: $color-accent-hover;
+    box-shadow: 0 0 0;
+}
 
 .articles-container {
     width: 100%;

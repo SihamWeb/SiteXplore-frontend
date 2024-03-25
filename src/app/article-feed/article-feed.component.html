@@ -5,12 +5,12 @@
     <div class="articles-list-disposition">
         <button id="cards" (click)="setArticlesDisposition('cards')" class="{{ disposition=='cards' ? 'active' : ''}}"><fa-icon [icon]="faTable"></fa-icon></button>
         <button id="lines" (click)="setArticlesDisposition('lines')" class="{{ disposition=='lines' ? 'active' : ''}}"><fa-icon [icon]="faTableList"></fa-icon></button>
+        <p style="margin-top: 4vh" *ngIf="searchString.length > 0"><span>Résultat de la recherche pour: </span> {{searchString}}</p>
     </div>
 
 
     <div class="filter-modal">
         <p class="title">Filtres</p>
-
         
         <form class="form-container" (ngSubmit)="filterArticles()" #createForm="ngForm">
             <div class="form-fieldset">

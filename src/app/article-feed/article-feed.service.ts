@@ -33,6 +33,10 @@ export class ArticleFeedService {
     return this.http.get(`${APIEndpoint}rss`);
   }
 
+  getSearchedArticles(searchString: any) {
+    return this.http.get(`${APIEndpoint}rss/search?query=${searchString}`);
+  }
+
   getAuthors() {
     return this.http.get(`${APIEndpoint}rss/authors`);
   }

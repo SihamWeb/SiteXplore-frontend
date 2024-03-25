@@ -25,9 +25,10 @@ export const routes: Routes = [
   { path : 'quiz', component : QuizComponent },
   { path : 'classement-au-quiz', component : RankingQuizComponent },
   { path : 'flux-d-actualites', component : ArticleFeedComponent },
+  { path : 'flux-d-actualites/search/:search', component : ArticleFeedComponent },
   { path : 'carte-interactive', component : MapComponent },
   { path : 'frise-chronologique', component : TimelineComponent },
   { path : 'mentions-legales', component : LegalNoticesComponent },
   { path : 'ressources-documentaires', component : DocumentaryResourcesComponent },
-  { path : 'credits', component : CopyrightComponent }
+  { path : 'credits', component : CopyrightComponent },
 ];
