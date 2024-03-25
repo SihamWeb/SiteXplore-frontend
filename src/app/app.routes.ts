@@ -13,6 +13,7 @@ import {TimelineComponent} from "./timeline/timeline.component";
 import {LegalNoticesComponent} from "./legal-notices/legal-notices.component";
 import {DocumentaryResourcesComponent} from "./documentary-resources/documentary-resources.component";
 import {CopyrightComponent} from "./copyright/copyright.component";
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 export const routes: Routes = [
   { path : '', component : HomeComponent },
@@ -22,7 +23,7 @@ export const routes: Routes = [
   { path : 'inscription', component : RegisterComponent },
   { path: 'confirm-registration', component: RegisterComponent },
   { path : 'mot-de-passe-oublie', component : ForgottenPasswordComponent },
-  { path : 'quiz', component : QuizComponent },
+  //{ path : 'quiz', component : QuizComponent },
   { path : 'classement-au-quiz', component : RankingQuizComponent },
   { path : 'flux-d-actualites', component : ArticleFeedComponent },
   { path : 'flux-d-actualites/search/:search', component : ArticleFeedComponent },
@@ -31,4 +32,5 @@ export const routes: Routes = [
   { path : 'mentions-legales', component : LegalNoticesComponent },
   { path : 'ressources-documentaires', component : DocumentaryResourcesComponent },
   { path : 'credits', component : CopyrightComponent },
+  { path : '**', pathMatch : 'full', component : ErrorPageComponent },
 ];

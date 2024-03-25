@@ -1,0 +1,36 @@
+@import '../../styles.scss';
+
+
+.error-page {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background: $color-primary;
+    color: $color-bg;
+}
+
+.error-page img.logo {
+    position:absolute;
+    left: 45vw;
+    top: 20vh;
+    height: 10vw;
+    margin: auto;
+}
+
+.error-page .title {
+    position: absolute;
+    width: 100%;
+    top: 45vh;
+    font-size: 5vw;
+    text-align: center;
+}
+
+.error-page .back-home {
+    position:absolute;
+    width: 100%;
+    left:0;
+    top: 60vh;
+    text-align:center;
+}
